@@ -1,18 +1,5 @@
 def ask_question():
-    subjects = ["Math", "Science", "Programming"]
-
-    print("Choose a subject.")
-
-    while True:
-        try:
-            choice = int(input("1. Math\n2. Science\n3. Programming\n> "))
-            if 1 <= choice <= 3:
-                break
-            else:
-                print("Please enter a number between 1 and 3.")
-        except ValueError:
-            print("Invalid input. Please enter a number.")
-
+    subject = input("Enter the subject you studied today: ")
     topic = input("What did you study today? : ")
 
     while True:
@@ -42,7 +29,7 @@ def ask_question():
         else:
             print("Please type 'yes' or 'no'.")
 
-    return subjects[choice - 1], topic, study_time, difficulty, completion
+    return subject, topic, study_time, difficulty, completion
 
 
 def main():
