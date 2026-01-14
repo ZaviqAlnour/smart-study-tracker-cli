@@ -1,6 +1,14 @@
 def ask_question():
-    subject = input("Enter the subject you studied today: ")
-    topic = input("What did you study today? : ")
+    subjects_AND_topics = {}
+    subject_number = int(input("How many subjects do you study today?: "))
+    for _ in range(subject_number):
+        subject = input("Enter the subject you studied today: ")
+        topic = input("What topic did you study today? ")
+        if subject not in subjects_AND_topics:
+            subjects_AND_topics[subject] = topic
+        else:
+            print("This in the list.")
+            continue
 
     while True:
         try:
@@ -29,7 +37,7 @@ def ask_question():
         else:
             print("Please type 'yes' or 'no'.")
 
-    return subject, topic, study_time, difficulty, completion
+    return subjects_AND_topics, topic, study_time, difficulty, completion
 
 
 def main():
